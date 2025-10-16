@@ -59,7 +59,7 @@ async function requestToken() {
   }));
 
   const req = await got.post(requestTokenURL, {
-    : {
+    headers: {
       Authorization: authHeader["Authorization"]
     }
   });
@@ -81,7 +81,7 @@ async function accessToken({
   }));
   const path = `https://api.twitter.com/oauth/access_token?oauth_verifier=${verifier}&oauth_token=${oauth_token}`
   const req = await got.post(path, {
-    : {
+    headers: {
       Authorization: authHeader["Authorization"]
     }
   });
@@ -109,7 +109,7 @@ async function getRequest({
   }, token));
 
   const req = await got.post(endpointURL, {
-    : {
+    headers: {
       Authorization: authHeader["Authorization"],
       'user-agent': "v2UnmuteUserJS"
     }
